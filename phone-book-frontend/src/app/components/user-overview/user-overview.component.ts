@@ -11,7 +11,7 @@ import { Person } from '../../dto/Person';
 export class UserOverviewComponent implements OnInit {
 
   userLoaded: Promise<boolean> = Promise.resolve(false);
-  user: Person = new Person("Peter","Lustig","1","Peter.Lustig@web.de");
+  user: Person = new Person("","","","");
 
   constructor(public userSvc: TableFillService, private router: Router) { }
 
@@ -19,15 +19,5 @@ export class UserOverviewComponent implements OnInit {
     this.userSvc.currentPerson.subscribe((person: Person) => {
       this.user = person;
     });
-    this.user = {
-      firstName: "Peter",
-      lastName: "Lustig",
-      id: "1",
-      email: "Peter.Lustig@web.de"
-    };
   }
-
-  // toggle(): void {
-  //   this.animate === true ? this.animate = false : this.animate = true;
-  // }
 }

@@ -21,22 +21,16 @@ export class PersonListComponent implements OnInit {
   // @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   dataSource = new MatTableDataSource<Person>();
-  persons: Person[] = [{firstName: "Peter", lastName: "Lustig", id: "1", email: "Peter.Lustig@web.de"},
-                      {firstName: "Kim", lastName: "Weiser", id: "2", email: "Kim.Weiser@web.de"},
-                      {firstName: "Gucci", lastName: "Prada", id: "3", email: "Gucci.Prada@web.de"},
-    ];
+
 
   constructor(private userSvc: TableFillService) { }
 
   ngOnInit(): void {
       
-    this.dataSource = new MatTableDataSource(this.persons);
-    // this.userSvc.getAllUsers().subscribe(result => {
-    //   this.dataSource = new MatTableDataSource(result);
-    //   this.dataSource.paginator = this.paginator;
-    //   this.dataSource.sort = this.sort;
-    //   this.setRandomPerson(result);
-    // });
+    this.userSvc.getAllUsers().subscribe(result => {
+      this.dataSource = new MatTableDataSource(result);
+      this.setRandomPerson(result);
+    });
   }
 
   applyFilter(event: Event): void {
@@ -56,15 +50,12 @@ export class PersonListComponent implements OnInit {
       const random = Math.floor(Math.random() * (max - min)) + min;
       this.fillOverview(result[random]);
   }
-  // highlightRow(row): void {
-  //   this.selectedRow = row.deNumber;
-  // }
 
   clearInputValue(value: string){
     this.dataSource.filter = value;
   }
 
-  openAddDialog(){
-
+  openAddDialog(person: Person){
+    this.userSvc.addUser(person).subscribe(() => "Succesfully created!")
   }
 }
