@@ -1,0 +1,49 @@
+  <mat-card class="card">
+    <mat-card-header>
+        <mat-card-title>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+              <div>
+                {{user.firstName}} {{user.lastName}}
+              </div>
+          </div>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+    <div fxLayout="column" fxLayoutAlign="space-between stretch" class="content">
+        <div class="item" fxLayout="row" fxLayoutAlign="space-between">
+          <div>
+            <mat-icon aria-hidden="false" color="primary">account_circle</mat-icon>
+          </div>
+          <div fxFlexOffset="5">
+            {{user.id || '-'}}
+          </div>   
+        </div>
+        <div class="item" fxLayout="row" fxLayoutAlign="space-between">
+          <div>
+            <mat-icon aria-hidden="false" color="primary">scanner</mat-icon>
+            </div>
+            <div fxFlexOffset="5">
+            {{user.firstName || '-'}}
+            </div>
+        </div>
+        <div class="item" fxLayout="row" fxLayoutAlign="space-between">
+          <div>
+            <mat-icon aria-hidden="false" color="primary">stay_primary_portrait</mat-icon>
+          </div>
+          <div fxFlexOffset="5">
+            {{user.lastName || '-'}}
+          </div>
+        </div>
+        <div class="item" fxLayout="row" fxLayoutAlign="space-between">
+          <div>
+            <mat-icon aria-hidden="false" color="primary">mail</mat-icon>
+          </div>
+          <div fxFlexOffset="5">
+            {{user.email || '-'}}
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+

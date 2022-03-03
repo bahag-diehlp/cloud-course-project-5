@@ -1,0 +1,25 @@
+table {
+    width: 100%;
+}
+tr.element-row:not(.example-expanded-row):hover {
+    background: gray;
+}
+.td.mat-cell:last-of-type{
+    padding-right: 0px;
+}
+.mat-form-field {
+    width: 100%;
+  }
+tr.element-row:not(.example-expanded-row):focus {
+    background: tomato;
+    outline: none;
+  }
+tr.element-row:focus mat-cell {
+  color: gray; 
+}
+.selected{
+  background-color: gray;
+}
+.mat-cell {
+  padding: 8px 8px 8px 0;
+}

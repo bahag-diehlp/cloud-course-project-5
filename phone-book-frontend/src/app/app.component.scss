@@ -1,0 +1,18 @@
+.split{
+    margin-left: 10px;  
+}
+
+main{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.right-side-container {
+    padding: 30px;
+    padding-right: 50%;
+    padding-top: 40px;
+}
+.left-side-container {
+    padding: 30px;
+    padding-left: 20%;
+}
