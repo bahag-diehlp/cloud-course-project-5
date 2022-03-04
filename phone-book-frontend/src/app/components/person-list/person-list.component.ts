@@ -55,7 +55,7 @@ export class PersonListComponent implements OnInit {
     this.dataSource.filter = value;
   }
 
-  openAddDialog(person: Person){
-    this.userSvc.addUser(person).subscribe(() => "Succesfully created!")
+  openAddDialog(){
+    this.userSvc.addUser({id: "1", firstName: "Peter", lastName: "Lustig", email: "Peter.Lustig@web.de"}).subscribe(() => console.log("Succesfully created!"))
   }
 }

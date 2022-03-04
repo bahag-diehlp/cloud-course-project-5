@@ -28,7 +28,7 @@ export function requireAuth(req: Request, res: Response, next: NextFunction) {
 
 // Get all feed items
 router.get('/', async (req: Request, res: Response) => {
-  const items = await User.findAndCountAll({order: [['id', 'DESC']]});
+  const items = await User.findAll();
   res.send(items);
 });
 
@@ -40,17 +40,8 @@ router.get('/:id',
       res.send(item);
     });
 
-// Get a signed url to put a new item in the bucket
-router.get('/signed-url/:fileName',
-    requireAuth,
-    async (req: Request, res: Response) => {
-      const {fileName} = req.params;
-      const url = AWS.getPutSignedUrl(fileName);
-      res.status(201).send({url: url});
-    });
-
 // Create feed with metadata
-router.post('/',
+router.post('/Users',
     requireAuth,
     async (req: Request, res: Response) => {
       const user = req.body;

@@ -1,5 +1,12 @@
 version: "3"
 services:
+  reverseproxy:
+      image: reverseproxy
+      ports:
+          - 8080:8080
+      restart: always
+      depends_on:
+        - backend-feed
   backend-feed:
     image: phone-book-user
     volumes:
