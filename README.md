@@ -15,9 +15,15 @@ The phone book is a simple single application of angular and is following the pr
 
 2. I wanted to build an CICD Pipeline but Travis-CI suspended my account and in the support they said it can not be reactivated
 But i also added the travis.yml with the right commands for an Deployment.
-![ScreenShot](/screenshots/Travis_Ci.png)
+![ScreenShot](/screenshots/Cannot_Use_Travis_Ci.png)
 
 3. 
+I created the Kubernetes Cluster and added the HPA / Services and the Pod to the Screenshots folder
+![ScreenShot](/screenshots/get_pods.png)
+![ScreenShot](/screenshots/kubectl_describe_services.png)
+![ScreenShot](/screenshots/kubectl_get_services.png)
+
+
 ### Prerequisite
 I have used a angular frontend with the copy based udagram-api-feed backend
 
@@ -38,7 +44,7 @@ The credentials are fixed in the set_env.sh
 
 
 ### 2. S3
-Create an AWS S3 bucket. Set the config values for environment variables in `set_env.sh`.
+Created an AWS S3 bucket. Set the config values for environment variables in `set_env.sh`.
 
 ### 3. Backend API
 Launch the backend API locally. The API is the application's interface to S3 and the database.

@@ -13,9 +13,12 @@ script:
   - docker --version # print the version for logging
   - docker build -t phone-book-user ./phone-book-user --no-cache
   - docker tag phone-book-user diehlp/phone-book-user:v1
+    - docker build -t phone-book-user ./phone-book-reverseproxy --no-cache
+  - docker tag phone-book-user diehlp/phone-book-user:v1
   - docker build -t phone-book-frontend ./phone-book-frontend --no-cache
   - docker tag phone-book-frontend diehlp/phone-book-frontend:v1
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push diehlp/phone-book-user:v1
   - docker push diehlp/phone-book-frontend:v1
+  - docker push diehlp/phone-book-reverseproxy:v1

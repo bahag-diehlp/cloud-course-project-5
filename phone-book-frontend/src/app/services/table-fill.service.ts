@@ -20,7 +20,7 @@ export class TableFillService {
 constructor(private http: HttpClient) { }
 
   public getAllUsers(): Observable<Person[]> {
-    const url = `${environment.baseUrl}/Repository/GetUsers`;
+    const url = `${environment.baseUrl}/GetUsers`;
     return this.http.get<ApiResponse<Person[]>>(url).pipe(
       map(data => data.result),
       catchError(err => {
