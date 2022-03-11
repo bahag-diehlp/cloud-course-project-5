@@ -29,6 +29,9 @@ I have used a angular frontend with the copy based udagram-api-feed backend
 
 ### What does my App do
 It will show the Users that are added to the database and u can look at more Informations for the user
+U can click between the different Users on the left table on
+![ScreenShot](/screenshots/Frontend_Website.png)
+and see more information to contact the person
 
 #### Environment Script
 A file named `set_env.sh` has been prepared as an optional tool to help you configure these variables on your local development environment.
