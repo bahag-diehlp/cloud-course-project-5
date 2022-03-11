@@ -2,7 +2,7 @@
 
 ### Phone-Book
 
-![ScreenShot](/screenshots/Frontend_Website-png)
+![ScreenShot](/screenshots/Frontend_Website.png)
 
 The phone book is a simple single application of angular and is following the principle of the course "Monolith to Microservices at Scale". It allows to add user to the phone book list and getting some more information. The User Input is sotred in a postgres database
 1. Frontend - Angular Web Application
